@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.google.android.material.card.MaterialCardView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/firstCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="#ffffff"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/blueLine"
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#1d125d"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoFirstTeam"
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/logo_napoli"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/logoSecondTeam"
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/logo_lazio"
+                app:layout_constraintEnd_toEndOf="@id/logoFirstTeam"
+                app:layout_constraintStart_toStartOf="@id/logoFirstTeam"
+                app:layout_constraintTop_toBottomOf="@+id/logoFirstTeam" />
+
+            <TextView
+                android:id="@+id/textFirstTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:text="@string/text_first_team"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/logoFirstTeam"
+                app:layout_constraintEnd_toStartOf="@id/firstTeamScore"
+                app:layout_constraintStart_toEndOf="@id/logoFirstTeam"
+                app:layout_constraintTop_toTopOf="@id/logoFirstTeam" />
+
+            <TextView
+                android:id="@+id/textSecondTeam"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/text_second_team"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/logoSecondTeam"
+                app:layout_constraintEnd_toStartOf="@+id/secondTeamScore"
+                app:layout_constraintStart_toEndOf="@id/logoSecondTeam"
+                app:layout_constraintTop_toTopOf="@id/logoSecondTeam" />
+
+            <ImageView
+                android:id="@+id/buttonNext"
+                android:layout_width="16dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="#1d125d"
+                android:scaleType="centerInside"
+                android:src="@mipmap/arrow_button"
+                app:layout_constraintBottom_toBottomOf="@id/logoSecondTeam"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/logoFirstTeam" />
+
+            <View
+                android:id="@+id/rightSeparator"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="#d9d9d9"
+                app:layout_constraintBottom_toBottomOf="@id/logoSecondTeam"
+                app:layout_constraintEnd_toStartOf="@id/buttonNext"
+                app:layout_constraintTop_toTopOf="@id/logoFirstTeam" />
+
+            <FrameLayout
+                android:id="@+id/openStats"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/logoSecondTeam"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/rightSeparator"
+                app:layout_constraintTop_toTopOf="@id/logoFirstTeam">
+
+                <TextView
+                    android:id="@+id/textStatsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-medium"
+                    android:maxLines="1"
+                    android:text="@string/text_stats_button"
+                    android:textColor="#1d125d"
+                    android:textSize="8sp"
+                    android:textStyle="normal"
+                    app:drawableTopCompat="@mipmap/stats_icon" />
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/leftSeparator"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="#d9d9d9"
+                app:layout_constraintBottom_toBottomOf="@id/logoSecondTeam"
+                app:layout_constraintEnd_toStartOf="@id/openStats"
+                app:layout_constraintTop_toTopOf="@id/logoFirstTeam" />
+
+            <TextView
+                android:id="@+id/firstTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif"
+                android:text="2"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/textFirstTeam"
+                app:layout_constraintEnd_toStartOf="@id/leftSeparator" />
+
+            <TextView
+                android:id="@+id/secondTeamScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif"
+                android:text="0"
+                android:textColor="#1d125d"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@id/textSecondTeam"
+                app:layout_constraintEnd_toStartOf="@id/leftSeparator" />
+
+            <View
+                android:id="@+id/bottomSeparator"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp"
+                android:background="#d9d9d9"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/buttonNext"
+                app:layout_constraintStart_toStartOf="@+id/logoFirstTeam"
+                app:layout_constraintTop_toBottomOf="@id/logoSecondTeam" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstCard">
+
+        <ImageView
+            android:id="@+id/titleIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:src="@mipmap/title_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/firstTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="6sp"
+            android:text="AWARDS"
+            android:textColor="#1d125d"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/titleIcon"
+            app:layout_constraintStart_toEndOf="@id/titleIcon"
+            app:layout_constraintTop_toTopOf="@id/titleIcon" />
+
+        <TextView
+            android:id="@+id/secondTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.03"
+            android:text="EA Sports | Player of The Month"
+            android:textColor="#1d125d"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@+id/titleIcon"
+            app:layout_constraintTop_toBottomOf="@id/titleIcon" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondTitle">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/secondCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/logoMilan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@mipmap/logo_milan"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/playerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif"
+                        android:lineSpacingExtra="2sp"
+                        android:maxLines="1"
+                        android:text="ZLATAN"
+                        android:textColor="#1d125d"
+                        android:textSize="22sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/logoMilan"
+                        app:layout_constraintTop_toBottomOf="@id/logoMilan" />
+
+                    <TextView
+                        android:id="@+id/playerSurname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:lineSpacingExtra="2sp"
+                        android:maxLines="1"
+                        android:text="IBRAHIMOVIC"
+                        android:textColor="#1d125d"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/playerName"
+                        app:layout_constraintTop_toBottomOf="@id/playerName" />
+
+                    <ImageView
+                        android:id="@+id/playerAwards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:src="@mipmap/icon_fade_player_awards"
+                        app:layout_constraintStart_toEndOf="@id/playerSurname"
+                        app:layout_constraintTop_toBottomOf="@id/logoMilan" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/playerPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/photo_player_awards"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
